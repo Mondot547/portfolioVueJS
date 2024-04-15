@@ -1,18 +1,18 @@
 <template>
   <header>
     <nav>
-      <router-link :to="{ hash: '#haut' }">
+      <router-link :to="{ name: 'Home', hash: '#haut' }">
         <font-awesome-icon :icon="['fas', 'laptop-code']" />
       </router-link>
       <ul>
         <li>
-          <router-link :to="{ hash: '#presentation' }">Présentation</router-link>
+          <router-link :to="{ name: 'Home', hash: '#presentation' }">Présentation</router-link>
         </li>
         <li>
-          <router-link :to="{ hash: '#creation' }">Création</router-link>
+          <a href="#creation">Création</a>
         </li>
         <li>
-          <router-link :to="{ hash: '#contact' }">Contact</router-link>
+          <a href="#contact">Contact</a>
         </li>
       </ul>
     </nav>
@@ -25,18 +25,23 @@ nav ul {
   display: flex;
 }
 nav {
-  width: 90%;
-  top: 2%;
-  left: 5%;
+  z-index: 1000;
   position: fixed;
   background-color: whitesmoke;
   padding: 0 1rem 0 1rem;
   justify-content: space-between;
   align-items: center;
+  top: 2%;
+  left: 3.5%;
+  gap: 2rem;
+  width: 90%;
 }
 nav ul {
-  gap: 1rem;
+  gap: 2rem;
   list-style: none;
+
+  padding: 0;
+  text-align: center;
 }
 
 nav a {
