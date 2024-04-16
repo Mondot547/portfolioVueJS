@@ -1,44 +1,60 @@
 <template>
   <div class="contact-form">
-    <!-- Messages de succès et d'erreur -->
-    <div class="status-messages" :class="statusClass" v-if="status">
-      <span>{{ statusMessage }}</span>
-      <button @click="closeStatus" class="close-button" aria-label="Fermer">&times;</button>
+    <div class="information">
+      <ul>
+        <li>
+          <address>Ferme de Mamont, 80680, Sains-en-Amiénois.</address>
+        </li>
+        <li>
+          <a href="mailto:alex.mondot.mail.pro@gmail.com">alex.mondot.mail.pro@gmail.com</a>
+        </li>
+        <li>
+          <a href="tel:+33764532358">07.64.53.23.58</a>
+        </li>
+        <li>Git: <a href="https://github.com/Mondot547">https://github.com/Mondot547</a></li>
+      </ul>
     </div>
-    <!-- Formulaire -->
-    <form @submit.prevent="submitForm" ref="form">
-      <div class="form-group" v-for="(item, index) in formItems" :key="index">
-        <label :for="item.id" class="form-label">{{ item.label }}:</label>
-        <template v-if="item.type === 'textarea'">
-          <textarea
-            :id="item.id"
-            v-model="formData[item.id]"
-            rows="5"
-            class="form-input"
-            required
-            aria-label="Message"
-            :aria-describedby="item.id + '-error'"
-          ></textarea>
-        </template>
-        <template v-else>
-          <input
-            :type="item.type"
-            :id="item.id"
-            v-model="formData[item.id]"
-            class="form-input"
-            required
-            :aria-label="item.label"
-            :aria-describedby="item.id + '-error'"
-          />
-        </template>
-        <!-- Affichage des erreurs -->
-        <div v-if="formErrors[item.id]" class="error-message">{{ formErrors[item.id] }}</div>
+    <div class="form">
+      <!-- Messages de succès et d'erreur -->
+      <div class="status-messages" :class="statusClass" v-if="status">
+        <span>{{ statusMessage }}</span>
+        <button @click="closeStatus" class="close-button" aria-label="Fermer">&times;</button>
       </div>
-      <!-- Bouton d'envoi -->
-      <div class="btn-form">
-        <button type="submit" class="submit-button">Envoyer</button>
-      </div>
-    </form>
+      <!-- Formulaire -->
+      <form @submit.prevent="submitForm" ref="form">
+        <div class="form-group" v-for="(item, index) in formItems" :key="index">
+          <label :for="item.id" class="form-label">{{ item.label }}:</label>
+          <template v-if="item.type === 'textarea'">
+            <textarea
+              :id="item.id"
+              v-model="formData[item.id]"
+              rows="5"
+              class="form-input"
+              required
+              aria-label="Message"
+              :aria-describedby="item.id + '-error'"
+            ></textarea>
+          </template>
+          <template v-else>
+            <input
+              :type="item.type"
+              :id="item.id"
+              v-model="formData[item.id]"
+              class="form-input"
+              required
+              :aria-label="item.label"
+              :aria-describedby="item.id + '-error'"
+            />
+          </template>
+          <!-- Affichage des erreurs -->
+          <div v-if="formErrors[item.id]" class="error-message">{{ formErrors[item.id] }}</div>
+        </div>
+        <!-- Bouton d'envoi -->
+        <div class="btn-form">
+          <button type="submit" class="submit-button">Envoyer</button>
+        </div>
+      </form>
+    </div>
   </div>
 </template>
 
@@ -147,13 +163,49 @@ export default {
 <style scoped>
 form {
   width: 70%;
-  margin-top: 15rem;
+  
 }
 .contact-form {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10rem;
+  
+}
+.form {
+  width: 35%;
+  
+  display: flex;
+  justify-content: center;
+}
+.information {
+  width: 35%;
+  height: 500px;
+  background-image: url('../assets/imageFormContact.jpg');
+  background-size: cover;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px 15px 15px 0;
+}
+.information ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: end;
+  gap: 3rem;
+  height: 50%;
+  background-color: rgb(255,255,255, 0.5);
+  padding: 20px;
+  border-radius: 10px 10px 10px 0;
+}
+.information ul li a {
+  text-decoration: none;
+  color: #000;
 }
 .status-messages {
   position: absolute;

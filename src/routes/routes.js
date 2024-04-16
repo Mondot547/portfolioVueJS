@@ -1,10 +1,16 @@
 // routes.js
-import Home from '../App.vue';
+import { createRouter, createWebHistory } from 'vue-router';
+import Presentation from '../components/PresentationView.vue';
+import Projet from '../components/CreationProjet.vue';
+import Contact from '../components/ContactForm.vue'
 
-const routes = [
-  { path: '/', name: 'Home', component: Home },
-  { path: '/creation', name: 'Creation', component: Home },
-  { path: '/presentation', name: 'Presentation', component: Home }
-];
+const router = createRouter({
+  history: createWebHistory(),
+  routes: [
+    { path: '/presentation', component: Presentation },
+    { path: '/projet', component: Projet },
+    { path: '/contact', component: Contact }
+  ]
+});
 
-export default routes;
+export default router;

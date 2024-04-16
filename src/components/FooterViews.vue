@@ -5,8 +5,8 @@
 </template>
 
 <style scoped>
-    footer {
-        margin-top: 15rem;
-        text-align: center;
-    }
+footer {
+  margin-top: 10rem;
+  text-align: center;
+}
 </style>

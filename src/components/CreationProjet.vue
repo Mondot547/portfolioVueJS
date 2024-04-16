@@ -1,6 +1,6 @@
 <template>
   <div>
-    <main class="cards" id="haut">
+    <main class="cards">
       <Card
         v-for="project in projects"
         :key="project.id"
@@ -31,9 +31,9 @@ export default {
       projects: [
         {
           id: 1,
-          title: 'Projet 1',
+          title: 'Dynamiser un espace commentaire',
           description:
-            "Durant ma formation on m'a demandé de dynamiser un espace commentaire avec JavaScript le HTML à été fourni par l'école.",
+            "outils utilisé: HTML, CSS, JS",
           image: DynamiserCommentaire
         },
         {
@@ -79,5 +79,6 @@ export default {
   gap: 1rem;
   flex-wrap: wrap;
   width: 100%;
+  margin-top: 10rem;
 }
 </style>

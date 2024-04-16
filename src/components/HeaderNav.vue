@@ -1,18 +1,17 @@
 <template>
   <header>
     <nav>
-      <router-link :to="{ name: 'Home', hash: '#haut' }">
-        <font-awesome-icon :icon="['fas', 'laptop-code']" />
-      </router-link>
+      <font-awesome-icon :icon="['fas', 'laptop-code']" />
+
       <ul>
         <li>
-          <router-link :to="{ name: 'Home', hash: '#presentation' }">Présentation</router-link>
+          <router-link to="/presentation">Présentation</router-link>
         </li>
         <li>
-          <a href="#creation">Création</a>
+          <router-link to="/projet">Projet</router-link>
         </li>
         <li>
-          <a href="#contact">Contact</a>
+          <router-link to="/contact">Contact</router-link>
         </li>
       </ul>
     </nav>
