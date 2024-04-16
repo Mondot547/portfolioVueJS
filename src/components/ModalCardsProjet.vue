@@ -2,21 +2,18 @@
 
 <template>
   <div v-if="showModalFlag" class="modal">
-    <div class="modal-content">
+    <div class="modal-content" data-aos="fade-up">
       <button class="close-btn" @click="closeModal">X</button>
-      <img :src="selectedProject.image" alt="Image du projet" />
+      <div class="img">
+        <img :src="selectedProject.image" alt="Image du projet" />
+      </div>
       <div>
         <h2>{{ selectedProject.title }}</h2>
         <p>{{ selectedProject.description }}</p>
         <ul class="skills">
-          <li>
-            <font-awesome-icon :icon="['fab', 'html5']" />
-          </li>
-          <li>
-            <font-awesome-icon :icon="['fab', 'css3-alt']" />
-          </li>
-          <li>
-            <font-awesome-icon :icon="['fab', 'js']" />
+          <li v-for="(skill, index) in selectedProject.skills" :key="index">
+            <font-awesome-icon :icon="skill.icon" />
+            
           </li>
         </ul>
       </div>
@@ -60,11 +57,13 @@ export default {
   align-items: center;
   height: 76%;
   width: 80%;
-  box-sizing: content-box;
+  box-sizing: border-box;
+}
+.img {
+  box-sizing: border-box;
 }
 .modal-content img {
-  max-width: 550px;
-  min-width: 200px;
+  width: 70%;
 }
 .modal-content div {
   text-align: center;
@@ -91,8 +90,8 @@ export default {
 }
 .close-btn {
   position: absolute;
-  top: 12%;
-  right: 10%;
+  top: 1%;
+  right: 1%;
   cursor: pointer;
   background: transparent;
   border: none;

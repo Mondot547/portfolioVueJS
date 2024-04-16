@@ -3,15 +3,28 @@
     <div class="information">
       <ul>
         <li>
-          <address>Ferme de Mamont, 80680, Sains-en-Amiénois.</address>
+          <a
+            href="https://maps.app.goo.gl/Dv8nKBr4usyT83FE7"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            https://maps.app.goo.gl/Dv8nKBr4usyT83FE7</a
+          >
         </li>
         <li>
-          <a href="mailto:alex.mondot.mail.pro@gmail.com">alex.mondot.mail.pro@gmail.com</a>
+          <a href="mailto:alex.mondot.mail.pro@gmail.com" target="_blank" rel="noopener noreferrer"
+            >alex.mondot.mail.pro@gmail.com</a
+          >
         </li>
         <li>
-          <a href="tel:+33764532358">07.64.53.23.58</a>
+          <a href="tel:+33764532358" target="_blank" rel="noopener noreferrer">07.64.53.23.58</a>
         </li>
-        <li>Git: <a href="https://github.com/Mondot547">https://github.com/Mondot547</a></li>
+        <li>
+          Git:
+          <a href="https://github.com/Mondot547" target="_blank" rel="noopener noreferrer"
+            >https://github.com/Mondot547</a
+          >
+        </li>
       </ul>
     </div>
     <div class="form">
@@ -163,7 +176,6 @@ export default {
 <style scoped>
 form {
   width: 70%;
-  
 }
 .contact-form {
   position: relative;
@@ -171,11 +183,10 @@ form {
   justify-content: center;
   align-items: center;
   margin-top: 10rem;
-  
 }
 .form {
   width: 35%;
-  
+
   display: flex;
   justify-content: center;
 }
@@ -199,7 +210,7 @@ form {
   justify-content: end;
   gap: 3rem;
   height: 50%;
-  background-color: rgb(255,255,255, 0.5);
+  background-color: rgb(255, 255, 255, 0.5);
   padding: 20px;
   border-radius: 10px 10px 10px 0;
 }

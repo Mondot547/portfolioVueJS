@@ -20,6 +20,7 @@
 import Card from '../components/CardsProjet.vue'
 import ModalCardsProjet from '../components/ModalCardsProjet.vue'
 import DynamiserCommentaire from '../assets/dynamiserCommentaire.png'
+import { faHtml5, faCss3Alt, faJs } from '@fortawesome/free-brands-svg-icons'
 
 export default {
   components: {
@@ -32,9 +33,13 @@ export default {
         {
           id: 1,
           title: 'Dynamiser un espace commentaire',
-          description:
-            "outils utilisé: HTML, CSS, JS",
-          image: DynamiserCommentaire
+          description: 'outils utilisé: HTML, CSS, JS',
+          image: DynamiserCommentaire,
+          skills: [
+            { name: 'HTML5', icon: faHtml5 },
+            { name: 'CSS3', icon: faCss3Alt },
+            { name: 'JavaScript', icon: faJs }
+          ]
         },
         {
           id: 2,

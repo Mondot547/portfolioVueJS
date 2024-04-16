@@ -25,15 +25,12 @@ nav ul {
 }
 nav {
   z-index: 1000;
-  position: fixed;
   background-color: whitesmoke;
   padding: 0 1rem 0 1rem;
   justify-content: space-between;
   align-items: center;
-  top: 2%;
-  left: 3.5%;
   gap: 2rem;
-  width: 90%;
+
 }
 nav ul {
   gap: 2rem;

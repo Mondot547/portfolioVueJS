@@ -19,6 +19,7 @@ app.use(router);
 // Montage de l'application Vue
 app.component('font-awesome-icon', FontAwesomeIcon); // Ajoutez le composant FontAwesomeIcon
 
+AOS.init();
 app.mount('#app');
 
 // Initialise AOS après le montage de l'application

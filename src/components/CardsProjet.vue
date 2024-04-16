@@ -1,9 +1,10 @@
 <template>
-  <div class="card" @click="showModal(project)">
+  <div class="card" @click="showModal(project)" data-aos="fade-down">
     <img :src="project.image" alt="Image du projet" />
     <h3>{{ project.title }}</h3>
-    <p>{{ project.description }}</p>
-    
+    <ul class="skills">
+      <li v-for="(skill, index) in project.skills" :key="index">{{ skill.name }}</li>
+    </ul>
   </div>
 </template>
 
@@ -33,10 +34,18 @@ export default {
 
 .card:hover {
   transform: scale(1.05);
-  
+  box-shadow: 12px 12px 30px 12px #999;
 }
 
 .card img {
   width: 200px;
+}
+.card ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 </style>
