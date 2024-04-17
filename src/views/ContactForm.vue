@@ -1,8 +1,7 @@
 <template>
-  <div class="contact-form">
-    <span class="information" data-aos="zoom-in" data-aos-easing="ease-in" data-aos-delay="100">
-    </span>
-    <div class="form" data-aos="fade-left">
+  <main class="contact-form">
+    <span class="img3d" data-aos="fade-up"></span>
+    <div class="form" data-aos="fade-down">
       <!-- Messages de succès et d'erreur -->
       <div class="status-messages" :class="statusClass" v-if="status">
         <span>{{ statusMessage }}</span>
@@ -43,7 +42,7 @@
         </div>
       </form>
     </div>
-  </div>
+  </main>
 </template>
 
 <script>
@@ -161,13 +160,15 @@ form {
   justify-content: center;
   align-items: center;
   position: relative;
+  height: 80dvh;
+  padding: 0;
 }
 .form {
   width: 85%;
   display: flex;
   justify-content: center;
 }
-.information {
+.img3d {
   width: 100%;
   height: 500px;
   background-image: url('@/assets/imageMaquettePortfolio.png');
@@ -179,24 +180,7 @@ form {
   align-items: center;
   border-radius: 15px 15px 15px 0;
 }
-.information ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: end;
-  gap: 3rem;
-  height: 50%;
-  background-color: rgb(255, 255, 255, 0.8);
-  padding: 20px;
-  border-radius: 10px 10px 10px 0;
-  font-weight: bolder;
-}
-.information ul li a {
-  text-decoration: none;
-  color: #000;
-}
+
 .status-messages {
   position: absolute;
   top: 20%;
@@ -262,7 +246,6 @@ label {
     justify-content: space-between;
     align-items: center;
     margin: 0 auto;
-    padding-top: 5rem;
   }
   .form {
     width: 50%;

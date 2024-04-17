@@ -1,13 +1,15 @@
 <template>
-  <div class="card" @click="showModal(project)" data-aos="fade-down">
+  <figure class="card" @click="showModal(project)" data-aos="fade-down">
     <img :src="project.imageCard" alt="Image du projet" />
-    <h3>{{ project.title }}</h3>
-    <ul class="skills">
-      <li v-for="(skill, index) in project.skills" :key="index">
-        <font-awesome-icon :icon="skill.icon" />
-      </li>
-    </ul>
-  </div>
+    <div>
+      <figcaption>{{ project.title }}</figcaption>
+      <ul class="skills">
+        <li v-for="(skill, index) in project.skills" :key="index">
+          <font-awesome-icon :icon="skill.icon" :style="{ color: skill.color }" />
+        </li>
+      </ul>
+    </div>
+  </figure>
 </template>
 
 <script>
@@ -23,7 +25,7 @@ export default {
 
 <style scoped>
 .card {
-  width: 300px;
+  width: 350px;
   height: 250px;
   display: flex;
   flex-direction: column;
@@ -32,9 +34,8 @@ export default {
   padding: 1rem;
   margin: 0.5rem;
   cursor: pointer;
-  transition: transform 0.3s ease;
+  transition: 0.3s ease;
   text-align: center;
-  background-color: #f3f4ec;
 }
 
 .card:hover,
@@ -43,14 +44,22 @@ export default {
 }
 
 .card img {
-  width: 100%;
+  width: 330px;
   height: 200px;
+  margin-bottom: 10px;
 }
-.card h3 {
+.card div {
+  border: 1px solid rgb(192, 191, 191);
+  width: 350px;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.card figcaption {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: #3cc743;
+  color: #8444b2;
   font-size: 1.3rem;
 }
+
 .card ul {
   padding: 0;
   list-style: none;

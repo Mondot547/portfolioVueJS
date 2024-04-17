@@ -8,6 +8,9 @@
           <router-link to="/">Présentation</router-link>
         </li>
         <li>
+          <router-link to="/skills">Skills</router-link>
+        </li>
+        <li>
           <router-link to="/projet">Projets</router-link>
         </li>
         <li>

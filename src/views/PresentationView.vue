@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <main class="container">
     <div class="text-container" data-aos="fade-right" data-aos-offset="150">
       <h1 class="typing-effect">
         Bienvenue, je suis <span class="color-title">Développeur Web</span>
@@ -21,7 +21,7 @@
         data-aos="fade-left"
       />
     </div>
-  </div>
+  </main>
 </template>
 
 <script setup>
@@ -70,10 +70,10 @@ export default {
 <style scoped>
 .container {
   display: flex;
+  height: 80dvh;
   flex-wrap: wrap-reverse;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 5rem;
   position: relative;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

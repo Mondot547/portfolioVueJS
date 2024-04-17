@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <main class="cards">
+  <main>
+    <div class="cards">
       <Card
         v-for="project in projects"
         :key="project.id"
@@ -12,8 +12,8 @@
         :selectedProject="selectedProject"
         @close-modal="closeModal"
       />
-    </main>
-  </div>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -51,9 +51,9 @@ export default {
           imageModal: DynamiserCommentaire,
           imageCard: DynamiserCommentaireCards,
           skills: [
-            { name: 'HTML5', icon: faHtml5 },
-            { name: 'CSS3', icon: faCss3Alt },
-            { name: 'JavaScript', icon: faJs }
+            { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
+            { name: 'JavaScript', icon: faJs, color: '#F7DF1E' },
+            { name: 'CSS3', icon: faCss3Alt, color: '#264DE4' }
           ]
         },
         {
@@ -63,8 +63,8 @@ export default {
           imageModal: Booki,
           imageCard: BookiCard,
           skills: [
-            { name: 'HTML5', icon: faHtml5 },
-            { name: 'CSS3', icon: faCss3Alt }
+            { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
+            { name: 'CSS3', icon: faCss3Alt, color: '#264DE4' }
           ]
         },
         {
@@ -74,8 +74,8 @@ export default {
           imageModal: CV,
           imageCard: CVCard,
           skills: [
-            { name: 'HTML5', icon: faHtml5 },
-            { name: 'CSS3', icon: faCss3Alt }
+            { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
+            { name: 'CSS3', icon: faCss3Alt, color: '#264DE4' }
           ]
         },
         {
@@ -85,9 +85,9 @@ export default {
           imageModal: Doco,
           imageCard: DocoCard,
           skills: [
-            { name: 'Wordpress', icon: faWordpress },
-            { name: 'Elementor', icon: faElementor },
-            { name: 'WpForm', icon: faWpforms }
+            { name: 'Wordpress', icon: faWordpress, color: '#101517' },
+            { name: 'WpForm', icon: faWpforms, color: '#B2571A' },
+            { name: 'Elementor', icon: faElementor, color: '#8D0039' }
           ]
         }
       ],
@@ -108,17 +108,19 @@ export default {
 </script>
 
 <style scoped>
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80dvh;
+}
+
 .cards {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  width: 50%;
-  margin-top: 5%;
-}
-div {
-  display: flex;
-  justify-content: center;
+  width: 60%;
 }
 </style>
