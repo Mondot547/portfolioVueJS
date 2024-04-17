@@ -6,7 +6,7 @@
 
 <style scoped>
 footer {
-  margin-top: 10rem;
+  margin-top: 5rem;
   text-align: center;
 }
 </style>

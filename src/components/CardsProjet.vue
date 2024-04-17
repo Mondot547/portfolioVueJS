@@ -1,9 +1,11 @@
 <template>
   <div class="card" @click="showModal(project)" data-aos="fade-down">
-    <img :src="project.image" alt="Image du projet" />
+    <img :src="project.imageCard" alt="Image du projet" />
     <h3>{{ project.title }}</h3>
     <ul class="skills">
-      <li v-for="(skill, index) in project.skills" :key="index">{{ skill.name }}</li>
+      <li v-for="(skill, index) in project.skills" :key="index">
+        <font-awesome-icon :icon="skill.icon" />
+      </li>
     </ul>
   </div>
 </template>
@@ -21,10 +23,12 @@ export default {
 
 <style scoped>
 .card {
-  width: 330px;
-  height: 400px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  width: 300px;
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 1rem;
   margin: 0.5rem;
   cursor: pointer;
@@ -32,20 +36,31 @@ export default {
   text-align: center;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  box-shadow: 12px 12px 30px 12px #999;
+.card:hover,
+.card:focus {
+  transform: scale(1.1);
 }
 
 .card img {
-  width: 200px;
+  width: 100%;
+  height: 200px;
+}
+.card h3 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #8444b2;
+  font-size: 1.3rem;
 }
 .card ul {
   padding: 0;
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
   justify-content: center;
+  margin: 0;
+}
+.card ul li {
+  color: #1d76bc;
+  font-size: 2rem;
 }
 </style>

@@ -5,15 +5,14 @@
     <div class="modal-content" data-aos="fade-up">
       <button class="close-btn" @click="closeModal">X</button>
       <div class="img">
-        <img :src="selectedProject.image" alt="Image du projet" />
+        <img :src="selectedProject.imageModal" alt="Image du projet" />
       </div>
       <div>
         <h2>{{ selectedProject.title }}</h2>
         <p>{{ selectedProject.description }}</p>
         <ul class="skills">
           <li v-for="(skill, index) in selectedProject.skills" :key="index">
-            <font-awesome-icon :icon="skill.icon" />
-            
+            {{ skill.name }}
           </li>
         </ul>
       </div>
@@ -54,7 +53,9 @@ export default {
   border-radius: 5px;
   padding: 1rem;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   height: 76%;
   width: 80%;
   box-sizing: border-box;
@@ -65,6 +66,7 @@ export default {
 .modal-content img {
   width: 70%;
 }
+
 .modal-content div {
   text-align: center;
 }
@@ -101,5 +103,11 @@ export default {
   background-color: #999;
   border-radius: 50%;
   padding: 0 9px 0 9px;
+}
+
+@media screen and (min-width: 650px) {
+  .modal-content {
+    flex-direction: row;
+  }
 }
 </style>

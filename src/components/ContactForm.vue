@@ -1,33 +1,8 @@
 <template>
   <div class="contact-form">
-    <div class="information">
-      <ul>
-        <li>
-          <a
-            href="https://maps.app.goo.gl/Dv8nKBr4usyT83FE7"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            https://maps.app.goo.gl/Dv8nKBr4usyT83FE7</a
-          >
-        </li>
-        <li>
-          <a href="mailto:alex.mondot.mail.pro@gmail.com" target="_blank" rel="noopener noreferrer"
-            >alex.mondot.mail.pro@gmail.com</a
-          >
-        </li>
-        <li>
-          <a href="tel:+33764532358" target="_blank" rel="noopener noreferrer">07.64.53.23.58</a>
-        </li>
-        <li>
-          Git:
-          <a href="https://github.com/Mondot547" target="_blank" rel="noopener noreferrer"
-            >https://github.com/Mondot547</a
-          >
-        </li>
-      </ul>
-    </div>
-    <div class="form">
+    <span class="information" data-aos="zoom-in" data-aos-easing="ease-in" data-aos-delay="100">
+    </span>
+    <div class="form" data-aos="fade-left">
       <!-- Messages de succès et d'erreur -->
       <div class="status-messages" :class="statusClass" v-if="status">
         <span>{{ statusMessage }}</span>
@@ -175,26 +150,29 @@ export default {
 
 <style scoped>
 form {
-  width: 70%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 .contact-form {
-  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 10rem;
+  position: relative;
 }
 .form {
-  width: 35%;
-
+  width: 85%;
   display: flex;
   justify-content: center;
 }
 .information {
-  width: 35%;
+  width: 100%;
   height: 500px;
-  background-image: url('../assets/imageFormContact.jpg');
-  background-size: cover;
+  background-image: url('../assets/imageMaquettePortfolio.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
   color: #000;
   display: flex;
   justify-content: center;
@@ -210,9 +188,10 @@ form {
   justify-content: end;
   gap: 3rem;
   height: 50%;
-  background-color: rgb(255, 255, 255, 0.5);
+  background-color: rgb(255, 255, 255, 0.8);
   padding: 20px;
   border-radius: 10px 10px 10px 0;
+  font-weight: bolder;
 }
 .information ul li a {
   text-decoration: none;
@@ -232,10 +211,12 @@ form {
 .form-group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px;
+  margin-top: 20px;
 }
 label {
   font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #cc0000;
 }
 .form-input {
   width: 100%;
@@ -245,11 +226,11 @@ label {
   border-radius: 5px;
 }
 .error-message {
-  color: red;
+  color: #cc0000;
   font-size: 0.8rem;
 }
 .submit-button {
-  background-color: #4caf50;
+  background-color: #cc0000;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -257,9 +238,10 @@ label {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.3s ease;
+  margin-top: 2rem;
 }
 .submit-button:hover {
-  background-color: #45a049;
+  background-color: #7a1205;
 }
 .close-button {
   position: absolute;
@@ -270,5 +252,29 @@ label {
   cursor: pointer;
   font-size: 1.2rem;
   color: red;
+}
+
+@media screen and (min-width: 768px) {
+  .contact-form {
+    width: 90%;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding-top: 5rem;
+  }
+  .form {
+    width: 50%;
+    box-sizing: border-box;
+  }
+
+  .form input,
+  .form textarea {
+    width: 95%;
+  }
+  .information {
+    width: 50%;
+  }
 }
 </style>
