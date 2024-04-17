@@ -170,15 +170,10 @@ form {
 }
 .img3d {
   width: 100%;
-  height: 500px;
+  height: 100%;
   background-image: url('@/assets/imageMaquettePortfolio.png');
   background-repeat: no-repeat;
   background-position: 50%;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 15px 15px 15px 0;
 }
 
 .status-messages {
@@ -247,6 +242,7 @@ label {
     align-items: center;
     margin: 0 auto;
   }
+  
   .form {
     width: 50%;
     box-sizing: border-box;

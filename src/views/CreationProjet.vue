@@ -112,15 +112,21 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80dvh;
+  height: 150dvh;
 }
 
 .cards {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   flex-wrap: wrap;
-  width: 60%;
+  width: 100%;
+}
+
+@media screen and (min-width: 813px) {
+  main {
+    height: 80dvh;
+  }
 }
 </style>
