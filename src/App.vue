@@ -3,12 +3,21 @@ import HeaderNav from './components/HeaderNav.vue'
 import FooterViews from './components/FooterViews.vue'
 </script>
 
+<script>
+export default {
+  name: 'App',
+  computed: {
+    NotFound() {
+      return this.$route.matched.some((route) => route.name === 'NotFound')
+    }
+  }
+}
+</script>
+
 <template>
-  <HeaderNav />
+  <HeaderNav v-if="!NotFound" />
   <router-view></router-view>
-  <FooterViews />
+  <FooterViews v-if="!NotFound" />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>

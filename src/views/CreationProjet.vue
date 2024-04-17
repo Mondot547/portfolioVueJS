@@ -17,16 +17,16 @@
 </template>
 
 <script>
-import Card from '../components/CardsProjet.vue'
-import ModalCardsProjet from '../components/ModalCardsProjet.vue'
-import DynamiserCommentaire from '../assets/dynamiserCommentaire.png'
-import DynamiserCommentaireCards from '../assets/commentaireCards.png'
-import Booki from '../assets/Capture d’écran du 2024-04-16 20-15-44.png'
-import BookiCard from '../assets/bookiCards.png'
-import CV from '../assets/Capture d’écran du 2024-04-16 20-43-37.png'
-import CVCard from '../assets/CVCards.png'
-import Doco from '../assets/Capture d’écran du 2024-04-16 21-03-54.png'
-import DocoCard from '../assets/docoCards.png'
+import Card from '@/components/CardsProjet.vue'
+import ModalCardsProjet from '@/components/ModalCardsProjet.vue'
+import DynamiserCommentaire from '@/assets/dynamiserCommentaire.png'
+import DynamiserCommentaireCards from '@/assets/commentaireCards.png'
+import Booki from '@/assets/Capture d’écran du 2024-04-16 20-15-44.png'
+import BookiCard from '@/assets/bookiCards.png'
+import CV from '@/assets/Capture d’écran du 2024-04-16 20-43-37.png'
+import CVCard from '@/assets/CVCards.png'
+import Doco from '@/assets/Capture d’écran du 2024-04-16 21-03-54.png'
+import DocoCard from '@/assets/docoCards.png'
 import {
   faHtml5,
   faCss3Alt,
@@ -47,7 +47,7 @@ export default {
         {
           id: 1,
           title: 'Espace commentaire',
-          description: 'On m\'a donné comme défi',
+          description: "On m'a donné comme défi",
           imageModal: DynamiserCommentaire,
           imageCard: DynamiserCommentaireCards,
           skills: [
@@ -110,10 +110,15 @@ export default {
 <style scoped>
 .cards {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
-  width: 100%;
-  margin-top: 10rem;
+  width: 50%;
+  margin-top: 5%;
+}
+div {
+  display: flex;
+  justify-content: center;
 }
 </style>

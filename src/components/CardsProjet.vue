@@ -34,6 +34,7 @@ export default {
   cursor: pointer;
   transition: transform 0.3s ease;
   text-align: center;
+  background-color: #f3f4ec;
 }
 
 .card:hover,
@@ -47,7 +48,7 @@ export default {
 }
 .card h3 {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: #8444b2;
+  color: #3cc743;
   font-size: 1.3rem;
 }
 .card ul {

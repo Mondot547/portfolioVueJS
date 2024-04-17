@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-import img3D from '../assets/development-4536630_1280.png'
+import img3D from '@/assets/development-4536630_1280.png'
 </script>
 
 <script>

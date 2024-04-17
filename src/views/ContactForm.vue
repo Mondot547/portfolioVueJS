@@ -170,7 +170,7 @@ form {
 .information {
   width: 100%;
   height: 500px;
-  background-image: url('../assets/imageMaquettePortfolio.png');
+  background-image: url('@/assets/imageMaquettePortfolio.png');
   background-repeat: no-repeat;
   background-position: 50%;
   color: #000;

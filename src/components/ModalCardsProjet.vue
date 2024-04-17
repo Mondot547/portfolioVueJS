@@ -1,5 +1,3 @@
-<script setup></script>
-
 <template>
   <div v-if="showModalFlag" class="modal">
     <div class="modal-content" data-aos="fade-up">
