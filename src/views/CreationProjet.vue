@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <div class="cards-list">
     <div class="cards">
       <Card
         v-for="project in projects"
@@ -13,7 +13,7 @@
         @close-modal="closeModal"
       />
     </div>
-  </main>
+  </div>
 </template>
 
 <script>
@@ -108,22 +108,21 @@ export default {
 </script>
 
 <style scoped>
-main {
+.cards-list {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 150dvh;
+  width: 100%;
+  height: 100dvh;
+  white-space: inherit;
 }
-
 .cards {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
-  width: 100%;
 }
-
 @media screen and (min-width: 813px) {
   main {
     height: 80dvh;

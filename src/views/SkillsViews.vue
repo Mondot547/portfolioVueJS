@@ -1,9 +1,7 @@
 <template>
-  <main>
-    <section class="container">
-      <Skill v-for="skill in skills" :key="skill.id" :skill="skill" data-aos="fade-down" />
-    </section>
-  </main>
+  <div class="container">
+    <Skill v-for="skill in skills" :key="skill.id" :skill="skill" data-aos="fade-down" />
+  </div>
 </template>
 
 <script setup>
@@ -93,12 +91,9 @@ main,
   justify-content: center;
 }
 
-main {
-  height: 80vh;
-}
-
 .container {
+  height: 100dvh;
   gap: 3rem;
-  width: 50%;
+  width: 100%;
 }
 </style>

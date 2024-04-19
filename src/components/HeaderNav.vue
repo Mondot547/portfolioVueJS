@@ -2,30 +2,26 @@
 <template>
   <header>
     <nav>
-      <font-awesome-icon :icon="['fas', 'laptop-code']" />
+      <router-link to="/#presentation" class="logo">
+        <font-awesome-icon :icon="['fas', 'laptop-code']" />
+      </router-link>
       <ul>
         <li>
-          <a @click="navigateToAnchor('presentation')">Présentation</a>
+          <router-link to="/#presentation">Présentation</router-link>
         </li>
         <li>
-          <a @click="navigateToAnchor('skills')">Skills</a>
+          <router-link to="/#skills">Skills</router-link>
         </li>
         <li>
-          <a @click="navigateToAnchor('projets')">Projets</a>
+          <router-link to="/#projets">Projets</router-link>
         </li>
         <li>
-          <a @click="navigateToAnchor('contact')">Contact</a>
+          <router-link to="/#contact">Contact</router-link>
         </li>
       </ul>
     </nav>
   </header>
 </template>
-
-<script>
-export default {
-  props: ['navigateToAnchor']
-}
-</script>
 
 <style scoped>
 nav,
@@ -34,11 +30,25 @@ nav ul {
 }
 nav {
   z-index: 1000;
+  width: 98%;
+  position: fixed;
+  background-color: #fff;
   padding: 0 1rem 0 1rem;
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
+  padding: 0;
+  box-shadow: 10px 10px 30px #999;
+  border-radius: 10px;
+  height: 80px;
 }
+
+nav .logo a {
+  text-decoration: none;
+  color: #1e5d76;
+  border: none;
+}
+
 nav svg {
   font-size: 2rem;
 }
@@ -50,16 +60,22 @@ nav ul {
   text-align: center;
 }
 
-nav a {
+nav ul li a {
   text-decoration: none;
   color: #1e5d76;
   font-size: 1.3rem;
   text-transform: uppercase;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
     Verdana, sans-serif;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  transition: all 0.3s;
+  border-bottom: 1px solid transparent;
 }
 
-nav a:hover {
+nav ul li a:hover {
   color: #9d4d36;
+  transition: all 0.3s ease-in;
+  border-bottom: 1px solid #9d4d36;
 }
 </style>

@@ -141,7 +141,7 @@ export default {
       setTimeout(() => {
         this.closeStatus()
         this.resetForm()
-      }, 10000)
+      }, 500)
     }
   }
 }
@@ -169,7 +169,7 @@ form {
   justify-content: center;
 }
 .img3d {
-  width: 100%;
+  width: 60%;
   height: 100%;
   background-image: url('@/assets/imageMaquettePortfolio.png');
   background-repeat: no-repeat;

@@ -112,14 +112,14 @@ export default {
 }
 .image-container {
   width: 30%;
-  perspective: 1000px; /* perspective pour créer un effet 3D */
+  perspective: 500px;
 }
 
 .image-container img {
   width: 100%;
   background-color: transparent;
   transform-style: preserve-3d;
-  transition: transform 0.5s ease; /* ajouter une transition pour une animation douce */
+  transition: all 0.5s ease;
 }
 .creation {
   margin-top: 15rem;
