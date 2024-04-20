@@ -19,7 +19,7 @@ export default {
     //affiche la modal
     showModal(project, event) {
       if (event) {
-        event.stopPropagation() 
+        event.stopPropagation()
         // Empêche la propagation de l'événement si disponible
       }
       this.$emit('show-modal', project)
@@ -46,6 +46,8 @@ export default {
 .card:hover,
 .card:focus {
   transform: scale(1.1);
+  box-shadow: 10px 20px 30px black;
+  border-radius: 20px;
 }
 
 .card img {

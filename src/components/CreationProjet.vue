@@ -1,6 +1,5 @@
 <template>
-  <HeaderNav />
-  <main class="cards-list">
+  <section class="cards-list">
     <div class="cards">
       <!--boucle for pour aller chaque projet dans la data projects-->
       <Card
@@ -16,13 +15,10 @@
         @close-modal="closeModal"
       />
     </div>
-  </main>
-  <FooterViews />
+  </section>
 </template>
 
 <script>
-import HeaderNav from './HeaderNav.vue'
-import FooterViews from './FooterViews.vue'
 import Card from '@/components/CardsProjet.vue'
 import ModalCardsProjet from '@/components/ModalCardsProjet.vue'
 import DynamiserCommentaire from '@/assets/dynamiserCommentaire.png'
@@ -45,9 +41,7 @@ import {
 export default {
   components: {
     Card,
-    ModalCardsProjet,
-    HeaderNav,
-    FooterViews
+    ModalCardsProjet
   },
   data() {
     //donnée de projet
@@ -84,15 +78,15 @@ export default {
         {
           id: 3,
           title: 'Code ton CV',
-          description: "J'ai codé mon CV",
-          date: '',
+          description: 'Le but était de tester nos connaissance sur le HTML & CSS',
+          date: '12/03/2024',
           imageModal: CV,
           imageCard: CVCard,
           skills: [
             { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
             { name: 'CSS3', icon: faCss3Alt, color: '#264DE4' }
           ],
-          link: '12/03/2024'
+          link: 'https://github.com/Mondot547/coderSonCv'
         },
         {
           id: 4,
@@ -133,24 +127,28 @@ export default {
 </script>
 
 <style scoped>
-.cards-list {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 200dvh;
-  white-space: inherit;
-}
+.cards-list,
 .cards {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.cards-list {
+  width: 100%;
+  height: 200dvh; /* Taille par défaut */
+  white-space: inherit; /* Propriété inutile pour cette classe */
+}
+
+.cards {
   gap: 2rem;
   flex-wrap: wrap;
 }
+
+/* Média query pour les écrans de taille moyenne et plus */
 @media screen and (min-width: 813px) {
   .cards-list {
-    height: 60dvh;
+    height: 68dvh;
     padding-top: 10rem;
   }
 }

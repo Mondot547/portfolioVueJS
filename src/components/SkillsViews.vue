@@ -1,18 +1,16 @@
 <template>
-  <HeaderNav />
-  <main class="container">
+  <section class="container">
+    <h2>Mes compétences :</h2>
     <div>
       <!--boucle for pour afficher les diférentes compétence une à une a partir de la data skills-->
       <Skill v-for="skill in skills" :key="skill.id" :skill="skill" data-aos="fade-down" />
     </div>
-  </main>
-  <FooterViews />
+  </section>
 </template>
 
 <script setup>
 import Skill from '@/components/SkillOfSkills.vue'
-import HeaderNav from './HeaderNav.vue'
-import FooterViews from './FooterViews.vue'
+
 import {
   faHtml5,
   faCss3Alt,
@@ -91,8 +89,8 @@ const skills = [
 </script>
 
 <style scoped>
-main,
-.container div {
+section,
+.container > div {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -102,7 +100,12 @@ main,
 
 .container {
   height: 68dvh;
-  padding: 10rem 0 0 0;
+  padding-top: 10rem;
   width: 100%;
+}
+
+.container h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
 }
 </style>

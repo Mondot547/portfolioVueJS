@@ -42,7 +42,7 @@ export default {
 
 <template>
   <div id="presentation" class="container">
-    <div class="text-container" data-aos="fade-right" data-aos-offset="150">
+    <section class="text-container" data-aos="fade-right" data-aos-offset="150">
       <h1>
         Bienvenue, je suis <span class="color-title">Développeur Web</span>
         <span class="typing-cursor"></span>
@@ -53,7 +53,7 @@ export default {
         Passionné par la technologie et la création, je me lance dans cette aventure pour découvrir
         et maîtriser les aspects variés du développement web.
       </p>
-    </div>
+    </section>
     <div class="image-container">
       <!-- Image avec les méthodes pour la faire bouger ou non selon où est la souris -->
       <img
@@ -130,12 +130,19 @@ export default {
 }
 
 .text-container {
-  padding: 3rem 0 3rem 0;
+  padding: 3rem 0;
 }
 
 .text-container p {
   width: 500px;
   line-height: 2rem;
+}
+
+.color-title,
+.name-color,
+.centre-color {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
+    sans-serif;
 }
 
 .color-title {
@@ -144,22 +151,11 @@ export default {
 
 .name-color {
   color: var(--presentation-name_color);
+  font-size: 1.5rem;
 }
 
 .centre-color {
   color: var(--presentation-centre_color);
-}
-
-.name-color,
-.centre-color {
-  font-size: 1.5rem;
-}
-
-.name-color,
-.centre-color,
-.color-title {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
-    sans-serif;
 }
 
 .image-container {

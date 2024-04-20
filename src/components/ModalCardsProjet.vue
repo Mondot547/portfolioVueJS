@@ -12,7 +12,7 @@
       <div>
         <h2>{{ selectedProject.title }}</h2>
         <p>{{ selectedProject.description }}</p>
-        <small>{{ selectedProject.date }}</small>
+        <date>{{ selectedProject.date }}</date>
 
         <!--liste des techno utilisé pour chaque projet-->
         <ul class="skills">
@@ -84,15 +84,15 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 76%;
-  width: 80%;
+  height: 80%;
+  width: 90%;
   box-sizing: border-box;
 }
 .img {
   box-sizing: border-box;
 }
 .modal-content img {
-  width: 70%;
+  width: 80%;
 }
 
 .modal-content div {
@@ -117,6 +117,10 @@ export default {
 .modal-content div p {
   width: 50%;
   margin: 0 auto;
+}
+
+.modal-content date {
+  padding: 2rem;
 }
 .close-btn {
   position: absolute;

@@ -1,16 +1,9 @@
-<script setup>
-import HeaderNav from './HeaderNav.vue'
-import FooterViews from './FooterViews.vue'
-</script>
-
 <template>
-  <HeaderNav />
-  <main id="contact" class="contact-form">
+  <section id="contact" class="contact-form">
     <span class="img3d" data-aos="fade-up"></span>
     <div class="form" data-aos="fade-down">
       <!-- Messages de succès et d'erreur -->
       <div class="status-messages" :class="statusClass" v-if="status">
-
         <!--affiche le message de statut (succee ou erreur)-->
 
         <span>{{ statusMessage }}</span>
@@ -21,11 +14,9 @@ import FooterViews from './FooterViews.vue'
       </div>
       <!-- Formulaire -->
       <form @submit.prevent="submitForm" ref="form">
-
         <!--génération des champs de formulaire en fonction des données-->
 
         <div class="form-group" v-for="(item, index) in formItems" :key="index">
-
           <!--label pour chaque champ-->
 
           <label :for="item.id" class="form-label">{{ item.label }}:</label>
@@ -63,13 +54,11 @@ import FooterViews from './FooterViews.vue'
         </div>
       </form>
     </div>
-  </main>
-  <FooterViews />
+  </section>
 </template>
 
 <script>
 export default {
-
   //les données du formulaire et statut
   data() {
     return {
@@ -94,7 +83,6 @@ export default {
     }
   },
   computed: {
-
     //affichage du message de statut en fonction de son état
     statusMessage() {
       if (this.status === 'success') {
@@ -116,7 +104,6 @@ export default {
     }
   },
   methods: {
-
     //validation des champs requis
     async submitForm() {
       this.formErrors = {}
@@ -202,50 +189,54 @@ form {
   flex-direction: column;
   flex-wrap: wrap;
 }
+
 .contact-form {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   height: 115dvh;
-  padding-top: 10rem;
-  padding-bottom: 5rem;
+  padding: 10rem 0 5rem; /* Utilisation de raccourcis pour la propriété padding */
 }
+
 .form {
   width: 85%;
   display: flex;
   justify-content: center;
 }
+
 .img3d {
   width: 60%;
   height: 100%;
   background-image: url('@/assets/imageMaquettePortfolio.png');
   background-repeat: no-repeat;
-  background-position: 50%;
+  background-position: center; /* Utilisation de la valeur center pour la propriété background-position */
 }
 
 .status-messages {
   position: absolute;
   top: 20%;
   right: 2%;
-  transform: translate(10px, 10px); /* Espacement par rapport au bord */
+  transform: translate(10px, 10px);
   background-color: var(--status-message_success-color);
   color: var(--status-message_color);
   padding: 10px;
   border: 1px solid var(--status-message_border-color);
   border-radius: 5px;
 }
+
 .form-group {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
 }
+
 label {
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: var(--label-color);
 }
+
 .form-input {
   width: 100%;
   padding: 10px;
@@ -253,10 +244,12 @@ label {
   border: 1px solid var(--input-border_color);
   border-radius: 5px;
 }
+
 .error-message {
   color: var(--error-message_color);
   font-size: 0.8rem;
 }
+
 .submit-button {
   background-color: var(--submit-btn_bck-color);
   color: var(--submit-btn_color);
@@ -268,9 +261,11 @@ label {
   transition: background-color 0.3s ease;
   margin-top: 2rem;
 }
+
 .submit-button:hover {
   background-color: var(--submit-btn_bck-color_hover);
 }
+
 .close-button {
   position: absolute;
   top: -5px;
@@ -282,11 +277,12 @@ label {
   color: var(--close-btn_color);
 }
 
+/* Media query */
 @media screen and (min-width: 768px) {
   .contact-form {
     width: 90%;
     flex-direction: row;
-    height: 50dvh;
+    height: 54dvh;
     gap: 2rem;
     justify-content: space-between;
     align-items: center;
