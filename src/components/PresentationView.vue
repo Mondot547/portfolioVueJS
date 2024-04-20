@@ -48,10 +48,19 @@ export default {
         <span class="typing-cursor"></span>
       </h1>
       <p>
-        Je m'appelle <span class="name-color">Alexandre Mondot</span>, actuellement en formation dev
-        web full-stack au <span class="centre-color">Centre Européen de Formation</span>. <br />
-        Passionné par la technologie et la création, je me lance dans cette aventure pour découvrir
-        et maîtriser les aspects variés du développement web.
+        Je suis <span class="name-color">Alexandre Mondot</span>, passionné par le développement web
+        et avide de nouvelles découvertes technologiques. Actuellement en formation full-stack au
+        <span class="centre-color">Centre Européen de Formation</span>, je me lance dans cette
+        aventure avec pour objectif de maîtriser les multiples facettes du développement web. Mon
+        portfolio est le reflet de mon engagement et de ma créativité.
+      </p>
+      <p>
+        Vous y trouverez une sélection de mes projets, réalisations et compétences dans le domaine
+        du développement web. Chaque projet est une histoire à part entière, une opportunité pour
+        moi de relever de nouveaux défis et d'explorer de nouvelles technologies. Parcourez mon
+        portfolio et plongez dans mon univers digital. N'hésitez pas à me contacter pour toute
+        question, proposition de collaboration ou simplement pour échanger sur nos passions
+        communes. Merci de votre visite et bonne découverte !
       </p>
     </section>
     <div class="image-container">
@@ -131,11 +140,13 @@ export default {
 
 .text-container {
   padding: 3rem 0;
+  width: 50%;
 }
 
 .text-container p {
-  width: 500px;
+  width: 100%;
   line-height: 2rem;
+  font-size: 1.3rem;
 }
 
 .color-title,
@@ -143,6 +154,7 @@ export default {
 .centre-color {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial,
     sans-serif;
+  font-size: 2rem;
 }
 
 .color-title {
@@ -151,7 +163,6 @@ export default {
 
 .name-color {
   color: var(--presentation-name_color);
-  font-size: 1.5rem;
 }
 
 .centre-color {

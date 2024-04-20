@@ -206,7 +206,7 @@ form {
 }
 
 .img3d {
-  width: 60%;
+  width: 70%;
   height: 100%;
   background-image: url('@/assets/imageMaquettePortfolio.png');
   background-repeat: no-repeat;
