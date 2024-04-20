@@ -1,0 +1,34 @@
+:root {
+    /*header + nav*/
+    --nav-background_color: #fff;
+    --nav-shadow: #999;
+    --nav-icon_color: #1e5d76;
+    --nav-link_color: var(--nav-icon_color);
+    --nav-link_color-hover: #9d4d36;
+
+    /*presentation*/
+    --presentation-title_color: #8444b2;
+    --presentation-name_color: #ed5561;
+    --presentation-centre_color: #1d76bc;
+    --presentation-background_img-color: transparent;
+
+    /*card - creationProjet*/
+    --figure-div_border-color: rgb(192, 191, 191);
+    --figcaption-color: #8444b2;
+
+    /*contactForm*/
+    --status-message_success-color: green;
+    --status-message_color: #fff;
+    --status-message_border-color: #ddd;
+    --label-color: #cc0000;
+    --input-border_color: #ccc;
+    --error-message_color: #cc0000;
+    --submit-btn_bck-color: var(--label-color);
+    --submit-btn_color: #fff;
+    --submit-btn_bck-color_hover: #7a1205;
+    --close-btn_color: var(--error-message_color);
+
+    /*footer*/
+    --footer-link_color: var(--nav-link_color);
+    --footer-link_hover-color: var(--nav-link_color-hover);
+}
