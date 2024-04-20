@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import App from './App.vue';
+import App from '../src/views/PortfolioViews.vue';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +7,7 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import router from './routes/routes';
+import './assets/style/base.css';
 
 
 library.add(fas, fab);
@@ -25,7 +26,4 @@ app.mount('#app');
 // Initialise AOS après le montage de l'application
 app.config.globalProperties.$aos = AOS;
 
-// Défilement vers le haut au chargement de la page
-window.onload = function () {
-  window.scrollTo(0, 0);
-};
+

@@ -1,22 +1,21 @@
-<!-- HeaderNav.vue -->
 <template>
   <header>
     <nav>
-      <router-link to="/#presentation" class="logo">
+      <router-link :to="{ name: 'Accueil' }" class="logo">
         <font-awesome-icon :icon="['fas', 'laptop-code']" />
       </router-link>
       <ul>
         <li>
-          <router-link to="/#presentation">Présentation</router-link>
+          <router-link :to="{ name: 'Presentation' }">Présentation</router-link>
         </li>
         <li>
-          <router-link to="/#skills">Skills</router-link>
+          <router-link :to="{ name: 'Skills' }">Skills</router-link>
         </li>
         <li>
-          <router-link to="/#projets">Projets</router-link>
+          <router-link :to="{ name: 'Projets' }">Projets</router-link>
         </li>
         <li>
-          <router-link to="/#contact">Contact</router-link>
+          <router-link :to="{ name: 'Contact' }">Contact</router-link>
         </li>
       </ul>
     </nav>
@@ -24,28 +23,32 @@
 </template>
 
 <style scoped>
+header {
+  justify-content: center;
+}
+header,
 nav,
 nav ul {
   display: flex;
 }
 nav {
   z-index: 1000;
-  width: 98%;
+  width: 90%;
   position: fixed;
-  background-color: #fff;
+  background-color: var(--nav-background_color);
   padding: 0 1rem 0 1rem;
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
   padding: 0;
-  box-shadow: 10px 10px 30px #999;
+  box-shadow: 10px 10px 30px var(--nav-shadow);
   border-radius: 10px;
   height: 80px;
 }
 
-nav .logo a {
+nav .logo svg {
   text-decoration: none;
-  color: #1e5d76;
+  color: var(--nav-icon_color);
   border: none;
 }
 
@@ -62,7 +65,7 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
-  color: #1e5d76;
+  color: var(--nav-link_color);
   font-size: 1.3rem;
   text-transform: uppercase;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
@@ -74,8 +77,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: #9d4d36;
+  color: var(--nav-link_color-hover);
   transition: all 0.3s ease-in;
-  border-bottom: 1px solid #9d4d36;
+  border-bottom: 1px solid var(--nav-link_color-hover);
 }
 </style>

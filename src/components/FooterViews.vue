@@ -7,23 +7,31 @@ import { faInstagram, faLinkedinIn, faGithub } from '@fortawesome/free-brands-sv
     <span class="footer-nav">
       <ul class="nav-list">
         <li class="nav-item">
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.linkedin.com/in/alexandre-mondot-3644ab20a/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <font-awesome-icon :icon="faLinkedinIn" />
           </a>
         </li>
         <li class="nav-item">
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Mondot547" target="_blank" rel="noopener noreferrer">
             <font-awesome-icon :icon="faGithub" />
           </a>
         </li>
         <li class="nav-item">
-          <a href="http://" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://www.instagram.com/alexmondot547/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <font-awesome-icon :icon="faInstagram" />
           </a>
         </li>
       </ul>
     </span>
-    <small>Copyright @Mondot547 || fais le: 15/05/2024</small>
+    <small>Copyright @Mondot547 || fais le: <time datetime="2024-04-20">20 avril 2024</time></small>
   </footer>
 </template>
 
@@ -55,12 +63,12 @@ footer {
 }
 
 .nav-item a {
-  color: #1e5d76;
+  color: var(--footer-link_color);
   text-decoration: none;
 }
 
 .nav-item a:hover {
-  color: #9d4d36;
+  color: var(--footer-link_hover-color);
   transition: all 0.3s ease-in;
 }
 </style>

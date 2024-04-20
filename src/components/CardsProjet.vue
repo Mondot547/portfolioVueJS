@@ -1,5 +1,5 @@
 <template>
-  <figure class="card" @click="showModal(project)" data-aos="fade-down">
+  <figure class="card" @click="showModal(project, $event)" data-aos="fade-down">
     <img :src="project.imageCard" alt="Image du projet" />
     <div>
       <figcaption>{{ project.title }}</figcaption>
@@ -16,7 +16,12 @@
 export default {
   props: ['project'],
   methods: {
-    showModal(project) {
+    //affiche la modal
+    showModal(project, event) {
+      if (event) {
+        event.stopPropagation() 
+        // Empêche la propagation de l'événement si disponible
+      }
       this.$emit('show-modal', project)
     }
   }
@@ -49,14 +54,14 @@ export default {
   margin-bottom: 10px;
 }
 .card div {
-  border: 1px solid rgb(192, 191, 191);
+  border: 1px solid var(--figure-div_border-color);
   width: 350px;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
 }
 .card figcaption {
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color: #8444b2;
+  color: var(--figcaption-color);
   font-size: 1.3rem;
 }
 
@@ -70,7 +75,6 @@ export default {
   margin: 0;
 }
 .card ul li {
-  color: #1d76bc;
   font-size: 2rem;
 }
 </style>

@@ -1,22 +1,28 @@
 <template>
-  <div class="cards-list">
+  <HeaderNav />
+  <main class="cards-list">
     <div class="cards">
+      <!--boucle for pour aller chaque projet dans la data projects-->
       <Card
         v-for="project in projects"
         :key="project.id"
         :project="project"
         @show-modal="showModal"
       />
+      <!--modal en appellant les methode de vue, de selection et de fermeture de la modal-->
       <ModalCardsProjet
         :showModalFlag="showModalFlag"
         :selectedProject="selectedProject"
         @close-modal="closeModal"
       />
     </div>
-  </div>
+  </main>
+  <FooterViews />
 </template>
 
 <script>
+import HeaderNav from './HeaderNav.vue'
+import FooterViews from './FooterViews.vue'
 import Card from '@/components/CardsProjet.vue'
 import ModalCardsProjet from '@/components/ModalCardsProjet.vue'
 import DynamiserCommentaire from '@/assets/dynamiserCommentaire.png'
@@ -39,67 +45,86 @@ import {
 export default {
   components: {
     Card,
-    ModalCardsProjet
+    ModalCardsProjet,
+    HeaderNav,
+    FooterViews
   },
   data() {
+    //donnée de projet
     return {
       projects: [
+        //détail de chaque projet
         {
           id: 1,
           title: 'Espace commentaire',
           description: "On m'a donné comme défi",
+          date: '27/03/2024',
           imageModal: DynamiserCommentaire,
           imageCard: DynamiserCommentaireCards,
           skills: [
             { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
             { name: 'JavaScript', icon: faJs, color: '#F7DF1E' },
             { name: 'CSS3', icon: faCss3Alt, color: '#264DE4' }
-          ]
+          ],
+          link: 'https://github.com/Mondot547/dinamiserCommentaire'
         },
         {
           id: 2,
           title: 'Booki',
           description: 'Réservation de voyage dans différents lieux à Marseille',
+          date: '15/08/2022',
           imageModal: Booki,
           imageCard: BookiCard,
           skills: [
             { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
             { name: 'CSS3', icon: faCss3Alt, color: '#264DE4' }
-          ]
+          ],
+          link: 'https://github.com/Mondot547/Transformer_une_maquette_en_site_web_avec_HTML_-_CSS_Mondot_Alexandre-test'
         },
         {
           id: 3,
           title: 'Code ton CV',
           description: "J'ai codé mon CV",
+          date: '',
           imageModal: CV,
           imageCard: CVCard,
           skills: [
             { name: 'HTML5', icon: faHtml5, color: '#E34F26' },
             { name: 'CSS3', icon: faCss3Alt, color: '#264DE4' }
-          ]
+          ],
+          link: '12/03/2024'
         },
         {
           id: 4,
           title: 'SARL Doco Locamotoculture',
           description: "Vitrine d'un magasin de vente et de location d'appareils de jardin",
+          date: '01/09/2023',
           imageModal: Doco,
           imageCard: DocoCard,
           skills: [
             { name: 'Wordpress', icon: faWordpress, color: '#101517' },
             { name: 'WpForm', icon: faWpforms, color: '#B2571A' },
             { name: 'Elementor', icon: faElementor, color: '#8D0039' }
-          ]
+          ],
+          link: 'https://sarl-doco-locamotoculture.fr/?v=11aedd0e4327'
         }
       ],
+
+      //le flag pour afficher / masquer la modal
       showModalFlag: false,
+
+      //le projet selectionné à afficher dans la modale
       selectedProject: null
     }
   },
   methods: {
+    //affiche la modal avec les information du projet selectionné
     showModal(project) {
       this.selectedProject = project
       this.showModalFlag = true
     },
+
+    //ferme la modal
     closeModal() {
       this.showModalFlag = false
     }
@@ -113,7 +138,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100dvh;
+  height: 200dvh;
   white-space: inherit;
 }
 .cards {
@@ -124,8 +149,9 @@ export default {
   flex-wrap: wrap;
 }
 @media screen and (min-width: 813px) {
-  main {
-    height: 80dvh;
+  .cards-list {
+    height: 60dvh;
+    padding-top: 10rem;
   }
 }
 </style>

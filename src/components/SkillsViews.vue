@@ -1,11 +1,18 @@
 <template>
-  <div class="container">
-    <Skill v-for="skill in skills" :key="skill.id" :skill="skill" data-aos="fade-down" />
-  </div>
+  <HeaderNav />
+  <main class="container">
+    <div>
+      <!--boucle for pour afficher les diférentes compétence une à une a partir de la data skills-->
+      <Skill v-for="skill in skills" :key="skill.id" :skill="skill" data-aos="fade-down" />
+    </div>
+  </main>
+  <FooterViews />
 </template>
 
 <script setup>
-import Skill from '../components/SkillOfSkills.vue'
+import Skill from '@/components/SkillOfSkills.vue'
+import HeaderNav from './HeaderNav.vue'
+import FooterViews from './FooterViews.vue'
 import {
   faHtml5,
   faCss3Alt,
@@ -19,6 +26,7 @@ import {
   faSass
 } from '@fortawesome/free-brands-svg-icons'
 
+//détails des compétence avec icon et la couleur associé
 const skills = [
   {
     id: 1,
@@ -84,16 +92,17 @@ const skills = [
 
 <style scoped>
 main,
-.container {
+.container div {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  gap: 3rem;
 }
 
 .container {
-  height: 100dvh;
-  gap: 3rem;
+  height: 68dvh;
+  padding: 10rem 0 0 0;
   width: 100%;
 }
 </style>

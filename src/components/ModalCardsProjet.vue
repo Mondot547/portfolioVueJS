@@ -1,18 +1,35 @@
 <template>
-  <div v-if="showModalFlag" class="modal">
+  <!--affiche la modal que si showModalFlag est vrai + appel de la fonction handleClickOutside-->
+  <div v-if="showModalFlag" class="modal" @click="handleClickOutside">
     <div class="modal-content" data-aos="fade-up">
+      <!--btn pour fermer la modal-->
       <button class="close-btn" @click="closeModal">X</button>
       <div class="img">
         <img :src="selectedProject.imageModal" alt="Image du projet" />
       </div>
+
+      <!--information propre à chaque projet-->
       <div>
         <h2>{{ selectedProject.title }}</h2>
         <p>{{ selectedProject.description }}</p>
+        <small>{{ selectedProject.date }}</small>
+
+        <!--liste des techno utilisé pour chaque projet-->
         <ul class="skills">
           <li v-for="(skill, index) in selectedProject.skills" :key="index">
-            {{ skill.name }}
+            <!--icon avec couleur-->
+            <font-awesome-icon :icon="skill.icon" :style="{ color: skill.color }" />
           </li>
         </ul>
+
+        <!--lien vers le repo git ou le site en question-->
+        <a
+          v-if="selectedProject.link"
+          :href="selectedProject.link"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Lien vers le projet</a
+        >
       </div>
     </div>
   </div>
@@ -21,12 +38,25 @@
 <script>
 export default {
   props: {
+    //propriété indique si la modal doit s'afficher ou pas
     showModalFlag: Boolean,
+
+    //objet représentant les détails du projet selectioné
     selectedProject: Object
   },
   methods: {
+    //méthode pour émettre un événement de fermeture de la modal
     closeModal() {
       this.$emit('close-modal')
+    },
+
+    //méthode qui permet de fermer la modal si click en dehors
+    handleClickOutside(event) {
+      //verifie ou est le click
+      if (event.target.classList.contains('modal')) {
+        //et ferme la modal
+        this.closeModal()
+      }
     }
   }
 }
