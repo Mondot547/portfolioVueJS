@@ -56,7 +56,6 @@ export default {
   margin-bottom: 10px;
 }
 .card div {
-  border: 1px solid var(--figure-div_border-color);
   width: 350px;
   border-bottom-left-radius: 1rem;
   border-bottom-right-radius: 1rem;
