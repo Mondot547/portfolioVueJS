@@ -192,6 +192,7 @@ form {
 
 .contact-form {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
@@ -206,7 +207,7 @@ form {
 }
 
 .img3d {
-  width: 70%;
+  width: 100%;
   height: 100%;
   background-image: url('@/assets/imageMaquettePortfolio.png');
   background-repeat: no-repeat;

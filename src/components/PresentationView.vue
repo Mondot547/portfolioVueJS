@@ -54,14 +54,7 @@ export default {
         aventure avec pour objectif de maîtriser les multiples facettes du développement web. Mon
         portfolio est le reflet de mon engagement et de ma créativité.
       </p>
-      <p>
-        Vous y trouverez une sélection de mes projets, réalisations et compétences dans le domaine
-        du développement web. Chaque projet est une histoire à part entière, une opportunité pour
-        moi de relever de nouveaux défis et d'explorer de nouvelles technologies. Parcourez mon
-        portfolio et plongez dans mon univers digital. N'hésitez pas à me contacter pour toute
-        question, proposition de collaboration ou simplement pour échanger sur nos passions
-        communes. Merci de votre visite et bonne découverte !
-      </p>
+      
     </section>
     <div class="image-container">
       <!-- Image avec les méthodes pour la faire bouger ou non selon où est la souris -->
@@ -129,7 +122,7 @@ export default {
 
 .container {
   display: flex;
-  height: 75dvh;
+  flex-direction: column-reverse;
   padding-top: 5rem;
   flex-wrap: wrap-reverse;
   align-items: center;
@@ -140,7 +133,7 @@ export default {
 
 .text-container {
   padding: 3rem 0;
-  width: 50%;
+  width: 100%;
 }
 
 .text-container p {
@@ -179,5 +172,14 @@ export default {
   background-color: transparent;
   transform-style: preserve-3d;
   transition: all 0.5s ease;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+  .text-container {
+    width: 50%;
+  }
 }
 </style>
