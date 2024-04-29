@@ -99,6 +99,7 @@ section,
 }
 
 .container {
+  height: 68dvh;
   padding-top: 10rem;
   width: 100%;
 }
