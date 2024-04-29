@@ -196,7 +196,6 @@ form {
   justify-content: center;
   align-items: center;
   position: relative;
-  height: 115dvh;
   padding: 10rem 0 5rem; /* Utilisation de raccourcis pour la propriété padding */
 }
 

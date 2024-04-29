@@ -84,8 +84,8 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   box-sizing: border-box;
 }
 .img {
@@ -140,6 +140,15 @@ export default {
 @media screen and (min-width: 650px) {
   .modal-content {
     flex-direction: row;
+    align-items: center;
+    width: 80%;
+    height: 90%;
+  }
+  .modal-content img {
+    width: 50%;
+  }
+  .modal-content div {
+    width: 50%;
   }
 }
 </style>

@@ -34,7 +34,7 @@ header {
 }
 
 nav {
-  z-index: 1000;
+  z-index: 10;
   width: 100%;
   background-color: var(--nav-background_color);
   padding: 1rem;
@@ -46,6 +46,7 @@ nav {
 
 .logo {
   margin-right: auto;
+  font-size: 2rem;
 }
 
 .menu-toggle {
